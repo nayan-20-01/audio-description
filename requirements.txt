@@ -1,0 +1,13 @@
+streamlit
+fastapi
+uvicorn[standard]
+httpx
+requests
+edge-tts
+python-dotenv
+python-multipart
+opencv-python
+torch
+torchaudio
+pix2text
+pillow

@@ -179,7 +179,11 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-API_BASE_URL = "http://localhost:8000"
+# Pull the URL from Streamlit Secrets. If it doesn't exist, default to localhost.
+if "API_BASE_URL" in st.secrets:
+    API_BASE_URL = st.secrets["API_BASE_URL"]
+else:
+    API_BASE_URL = "http://localhost:8000"
 
 STAGE_LABELS = {
     "queued": "Queued",

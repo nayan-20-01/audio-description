@@ -9,5 +9,6 @@ python-multipart
 opencv-python
 torch
 torchaudio
+torchcodec
 pix2text
 pillow

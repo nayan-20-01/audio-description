@@ -199,11 +199,19 @@ STAGE_ORDER = list(STAGE_LABELS.keys())
 
 
 def upload_video(file) -> str:
+    st.write(f"Attempting to upload to: {API_BASE_URL}/upload")
+    
     response = requests.post(
         f"{API_BASE_URL}/upload",
         files={"file": (file.name, file.getvalue())},
     )
-    response.raise_for_status()
+    
+    # If the tunnel rejects it, print the exact error on the screen!
+    if response.status_code != 200:
+        st.error(f"Tunnel rejected the file! Status Code: {response.status_code}")
+        st.error(f"Message from tunnel: {response.text}")
+        st.stop()
+        
     return response.json()["job_id"]
 
 

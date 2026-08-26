@@ -2,8 +2,6 @@
 
 Automatically narrates board equations during silent pauses in NPTEL lecture videos, so visually impaired and auditory learners never miss what's written on the board.
 
-Built for a strict 6GB RAM laptop constraint — no local Whisper, no local LLM. VAD, scene detection, and OCR run locally as lightweight CPU models; language generation and speech synthesis are offloaded to free-tier cloud APIs.
-
 ## How it works
 
 1. **Detects silence** — Silero VAD finds pauses over 1.5s where the instructor stops speaking.

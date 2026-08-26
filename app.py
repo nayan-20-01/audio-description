@@ -199,8 +199,6 @@ STAGE_ORDER = list(STAGE_LABELS.keys())
 
 
 def upload_video(file) -> str:
-    st.write(f"Attempting to upload to: {API_BASE_URL}/upload")
-    
     response = requests.post(
         f"{API_BASE_URL}/upload",
         files={"file": (file.name, file.getvalue())},
@@ -213,7 +211,6 @@ def upload_video(file) -> str:
         st.stop()
         
     return response.json()["job_id"]
-
 
 def poll_job(job_id, status_placeholder, progress_bar):
     while True:

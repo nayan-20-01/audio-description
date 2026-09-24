@@ -1,4 +1,4 @@
-# NPTEL Audio Description
+# NPTEL-like Audio Description
 
 Automatically narrates board equations during silent pauses in NPTEL lecture videos, so visually impaired and auditory learners never miss what's written on the board.
 
@@ -48,9 +48,3 @@ In a second terminal:
 ```bash
 streamlit run app.py
 ```
-
-Upload a lecture video in the Streamlit UI at `localhost:8501`; it calls the FastAPI backend at `localhost:8000`.
-
-## Project status
-
-Code-complete across all four build phases; tested against real NPTEL footage with several fixes applied along the way (see `docs/memory.md` for the running development log). OCR crop size and scene-detection thresholds are still being tuned against real board content.
